@@ -1,0 +1,17 @@
+.navbar-brand{
+    width: 15%;
+}
+.nav-item{
+	padding-left:29px;
+	font-size:14px;
+	font-weight: bold;
+}
+.img-responsive{
+    width: 100%;
+}
+.footer1{
+    background-color: darkblue;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+ }
