@@ -40,25 +40,6 @@
         </div>
     </div>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Tên đơn vị cha</label>
-        <div class="col-sm-10">
-        <select class="form-control" name="sldonvi">
-            <option></option>
-            <?php 
-            $sql = "SELECT * FROM tbl_coquan";
-            $result = mysqli_query($conn,$sql);
-            if(mysqli_num_rows($result)>0){
-                while($row = mysqli_fetch_assoc($result)){
-            ?> 
-                <option value="<?php echo $row['id']; ?>"><?php echo $row['tenDV']; ?></option>
-            <?php
-            }
-        }
-    ?>
-        </select>
-        </div>
-    </div>
-    <div class="form-group row">
         <div class="col-sm-10 ">
         <button type="submit" class="btn btn-primary" name="btnAddUser">Thêm</button>
         </div>
@@ -72,11 +53,10 @@
                     $phone     = $_POST['txtSdt'];
                     $email     = $_POST['txtEmail'];
                     $website   = $_POST['txtWebsite'];
-                    $donvi     = $_POST['sldonvi'];
-                    $sql = "INSERT INTO tbl_coquan(tenDV, DiaChi, SDT, Email, website, id_cha)
-                            VALUES ('$fullName','$diachi ','$phone ',' $email','$website', '$donvi')";
+                    $sql = "INSERT INTO tbl_coquan(tenDV, DiaChi, SDT, Email, website)
+                            VALUES ('$fullName','$diachi ','$phone ',' $email','$website')";
                     if(mysqli_query($conn,$sql)){
-                        header('Location:index.php');
+                        header('Location:indexpb.php');
                     }
                     }
                     ?>
